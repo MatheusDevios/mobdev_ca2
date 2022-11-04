@@ -29,7 +29,7 @@ const routes: Routes = [
             loadChildren: () => import('../species/species.module').then( m => m.SpeciesPageModule)
           },
           {
-            path: 'id',
+            path: ':id',
             loadChildren: () => import('../specimen-details/specimen-details.module').then( m => m.SpecimenDetailsPageModule)
           }
         ]
@@ -42,7 +42,7 @@ const routes: Routes = [
             loadChildren: () => import('../spaceships/spaceships.module').then( m => m.SpaceshipsPageModule)
           },
           {
-            path: 'id',
+            path: ':id',
             loadChildren: () => import('../spaceships-details/spaceships-details.module').then( m => m.SpaceshipsDetailsPageModule)
           }
         ]

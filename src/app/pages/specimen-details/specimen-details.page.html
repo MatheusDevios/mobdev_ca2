@@ -1,9 +1,44 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>specimen-details</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(films:films)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ specie?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoriteFilm()" *ngIf="isFavorite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoriteFilm()" *ngIf="!isFavorite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding="">
+ 
+  <ion-card *ngIf="specie" class="specie-card">
+    <ion-card-header>Specie Name: {{ specie.name }}</ion-card-header>
+ 
+    <ion-item class="specie-info" lines="none">
+      <ion-icon name="star" slot="start"></ion-icon>
+      Classification: {{ specie.classification }}
+    </ion-item>
 
+    <ion-item class="specie-info" lines="none">
+      <ion-icon name="construct" slot="start"></ion-icon>
+      Designation: {{ specie.designation }}
+    </ion-item>
+ 
+    <ion-item class="specie-info" lines="none">
+      <ion-icon name="pulse" slot="start"></ion-icon>
+      Average Lifespan: {{ specie.average_lifespan }}
+    </ion-item>
+ 
+    <ion-item class="specie-info" lines="none">
+      <ion-icon name="language" slot="start"></ion-icon>
+      Language: {{ specie.language }}
+    </ion-item>
+  </ion-card>
+ 
 </ion-content>

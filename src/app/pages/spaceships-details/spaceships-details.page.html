@@ -1,9 +1,45 @@
+	
 <ion-header>
-  <ion-toolbar>
-    <ion-title>spaceships-details</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/(films:films)">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ ship?.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="unfavoriteFilm()" *ngIf="isFavorite">
+        <ion-icon name="star" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoriteFilm()" *ngIf="!isFavorite">
+        <ion-icon name="star-outline" slot="icon-only" color="secondary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding="">
+ 
+  <ion-card *ngIf="ship" class="ship-card">
+    <ion-card-header>Ship Name: {{ ship.name }}</ion-card-header>
+ 
+    <ion-item class="ship-info" lines="none">
+      <ion-icon name="star" slot="start"></ion-icon>
+      Manufacturer: {{ ship.manufacturer }}
+    </ion-item>
 
+    <ion-item class="ship-info" lines="none">
+      <ion-icon name="construct" slot="start"></ion-icon>
+      Model: {{ ship.model }}
+    </ion-item>
+ 
+    <ion-item class="ship-info" lines="none">
+      <ion-icon name="cash" slot="start"></ion-icon>
+      Price in credit: {{ ship.cost_in_credits }}
+    </ion-item>
+ 
+    <ion-item class="ship-info" lines="none">
+      <ion-icon name="cube" slot="start"></ion-icon>
+      Cargo Capacity: {{ ship.cargo_capacity }}
+    </ion-item>
+  </ion-card>
+ 
 </ion-content>

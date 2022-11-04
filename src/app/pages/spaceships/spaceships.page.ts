@@ -22,6 +22,7 @@ export class SpaceshipsPage implements OnInit {
   openDetails(ship) {
     let split = ship.url.split('/');
     let shipId = split[split.length-2];
+    console.log(shipId)
     this.router.navigateByUrl(`/tabs/spaceships/${shipId}`);
   }
 
