@@ -1,7 +1,14 @@
 .specie-card {
-    background: #545454;
-    border: 1px solid var(--ion-color-secondary);
+    display: flex;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0.6rem;
+    background-color: var(--ion-color-secondary);
+    padding: 0.2rem;
+    width: max-content;
 }
 .specie-info {
     --background: #4a4a4a;
+}
+.specie-name{
+    color: black;
 }
